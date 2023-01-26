@@ -1,0 +1,44 @@
+<!-- cdn을 통해서 reflection효과가 지원되는 브라우저 사용 및 
+																	지원안되는 브라우저  똑같은 효과 사용방법-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Lesson  - Modernizr</title>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2010.07.06dev/modernizr.min.js" integrity="sha512-HyO6DE8TAYakYahq831kmrY5Z/6HjP5wucRRPZ9XKDZhjyw5QroAPpvLRRhTSsfFh04OuEYKdcWeqKFTJCvB7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	
+
+	<style>
+		.demo-image{
+			-webkit-box-reflect:below ; 
+			/* 지원O : reflect 사용하려면 -webkit- prefix를 써야 사용가능 (아랫쪽으로 뒤집어진 사진효과 반영)*/
+		}
+		
+		.cssreflections .alt-image{ /*지원O : reflect 지원되는 브라우저에서  alt-image는 안보이게 함 */
+			display: none;
+		}
+		.no-cssreflections .alt-image{ /* 지원X : reflect 지원되지 않는 브라우저에 css 적용 */
+			display: block;
+			/* 첫번쨰 방법
+			 transform: rotateX(180deg); */
+			 /* 두번쨰 방법 */
+			transform: matrix(1,0,0,-1,0,0);
+			position:relative;
+			top:-5px;
+		}
+		</style>
+
+
+</head>
+<body>
+
+	<!-- Demo content -->
+	<img src="./images/demo-image.jpg" alt="damo-image" class="demo-image">
+	<img src="./images/demo-image.jpg" alt="damo-image" class="alt-image">
+
+
+</body>
+</html>

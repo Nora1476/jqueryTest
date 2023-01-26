@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<title></title>	
+<link rel="stylesheet" href="css/main.css">
+<link rel="shortcut icon" href="#">
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+<script src="./js/jquery.animateNumber.min.js" ></script>
+
+	
+<!--[if lt IE 9]>
+<script src="js/IE9.js"></script>
+<script src="js/html5shiv.js"></script>
+ <script src="js/respond.min.js"></script>
+ 
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="js/IE8.js"></script>
+<script src="js/IE8.js">IE7_PNG_SUFFIX=".png";</script>
+<![endif]-->
+
+<!--[if lt IE 7]>
+<script src="js/IE7.js"></script>
+<![endif]-->	
+
+</head>
+<body>
+  <div class="progress-bar">
+    <div class="bar"></div>
+    <div class="rate" data-rate="80"></div>
+  </div>
+
+  <script>
+
+    var progressWrap = $('.progress-bar'),
+        progressBar = $('.progress-bar').find('.bar'),
+        progressText =  $('.progress-bar').find('.rate');
+        progressRate = progressText.attr('data-rate');
+
+        //bar animate 2.5s width가 바뀌는 애니메이트
+        progressBar.animate({width:progressRate+'%'}, 2500);
+    
+    /* 첫번쨰 방법   
+
+    // 0.1초마다  1>2>3> ..... 60까지 넣어주도록
+    // 일정시간마다 할 일 setInterval(할일, 시간);
+    // 함수 textAnimation 실제로 할일 0% -> 1%..... 59% -> 60% 까지 숫자를 넣어주기
+    setInterval(textAnimation,1000/10);
+
+    //매시간마다 늘어난 수치를 가져오는 함수
+    //늘어나는 수치를 직접 넣는것이 아니라 전체 너비에서 늘어나는 만큼의 수치를 %로 가져옴
+    // 실제늘어난너비/전체너비*100 
+    function textAnimation(){
+      //전체너비에 대해 늘어난 요소의 너비 백분율 계산 
+      var currentRate = progressBar.width()/progressWrap.width()*100; 
+      progressText.text(Math.ceil(currentRate)+'%');
+    }
+    */
+
+    /*
+    //두번째 방법
+    // css속성중에서 수치가 있는 요소만 animate
+    progressBar.animate({width:'60%'}, 2500,'easeInOut', function(){});
+    //animate를 풀어서 쓸 경우 옵션:값, 옵션:값...
+    progressBar.animate({width:'60%'},{
+      duration:2500,
+      easing:'easeInOutQuint',
+      complete:function(){}
+    }) 
+   
+
+    //animate 옵션을 활용 사용자속성을 만들고, 속정이 바뀌는 것을 작성 가능
+    $({rate:0}).animate({rate:progressRate},{
+      duration:2500,
+      progress: function(){  //progress는 animate가 실행되는 중간에 할일
+        var now = this.rate;
+        progressText.text(Math.ceil(now)+'%');
+      },
+    });
+     */
+
+    
+     /* 세번쨰 방법
+     //https://aishek.github.io/jquery-animateNumber/
+     //min.js파일 다운받아서 script적용 시킨후 사용가능
+     */
+    //아래 코드 한줄은 기본 적으로 사용
+    //progressText.animateNumber({ number: progressRate }); 
+
+    // '%' 수치로 넣을 경우 
+    var percent_number_step = $.animateNumber.numberStepFactories.append(' %');
+    progressText.animateNumber(
+      {
+        number: progressRate,
+        //color: 'green',
+        //'font-size': '30px',
+
+        numberStep: percent_number_step
+      },
+      {
+        //easing: 'easeInQuad',
+        duration: 2500
+      }
+    );
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

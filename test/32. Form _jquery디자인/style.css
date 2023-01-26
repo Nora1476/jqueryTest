@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+
+body {
+  color: #444;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.input-group{
+  margin: 50px 0;
+  position:relative;
+}
+input{
+  border: none;
+  border-bottom: 1px solid #888;
+  display: block;
+  font-size: 20px;
+}
+input:focus{
+  outline: none;
+  border-bottom-width: 4px;
+  border-color: #48f;
+  transition: 0.5s;
+}
+
+label{
+  position: absolute;
+  color:#aaa;
+  left:0;
+  top:0;
+  opacity: 0; 
+  visibility:hidden;  
+  /* 가시성을 숨기면 display:none 과는 다르게 아예 없어진게 아니라 보이지만 않고 해당 공간은 존재 */
+  transition: 0.5s;
+}
+
+.label-top{
+  top:-30px;
+  opacity: 1; 
+  visibility: visible;  
+}
+

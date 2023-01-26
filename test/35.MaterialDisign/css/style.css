@@ -1,0 +1,11 @@
+.col {
+  background-color: #f99;
+  color: #fff;
+  border: 2px solid #fff;
+  /* padding, margin 수정x */
+}
+/* .inner {
+  background-color: #f99;
+  color: #fff;
+  border: 2px solid #000;
+} */

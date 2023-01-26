@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{ margin:0; padding:0;}
+    p { margin-left:10px; }
+  </style>
+  <script src="./js/vendor/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+
+  <p>Hello</p>
+  <p>2nd Paragraph</p>
+  
+<script>
+
+var p = $('p:last');
+
+//스크롤의양 _ scrollTop
+//화면상단에서의 거리 _ offset.top
+
+//선택자.position() 가까운 부모중에 포지션이 기본값이 아닌 요소를 기준으로 
+//offset 화면을 기분으로 함
+var offset = p.offset(); 
+p.html( 'left: ' + offset.left + ', top: ' + offset.top ); //화면좌측에서의 거리, 화면상단에서의 거리
+
+
+
+</script>
+
+</body>
+</html>
+

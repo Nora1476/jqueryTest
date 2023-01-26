@@ -1,0 +1,40 @@
+.gallery-container{
+  width:100%;
+  position: relative;
+}
+
+.gallery li{
+  list-style: none;
+  display: inline;
+}
+
+.gallery li img{
+  width: 40%;
+  margin:10px;
+}
+
+
+#lightbox_overlay{
+  opacity: 0;
+  pointer-events: none;
+  position:fixed;
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background-color: rgba(29,31,33,.95);
+  transition: opacity .3s ease-in;
+}
+
+  #lightbox_overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+#lightbox_image{
+  max-height: 70%;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}

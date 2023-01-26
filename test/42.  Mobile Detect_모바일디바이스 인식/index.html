@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Mobile Detect</h1>
+
+  <div class="mobile"> mobile device</div>
+  <div class="pc"> PC device </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+  <script src="./detectmobilebrowser.js"></script>
+  <script>
+
+    // 1. 라이브러리 사용
+    // //console.log(jQuery.browser.mobile);    //모바일 기기일때 true, PC일때 false 
+    if(jQuery.browser.mobile ==true){
+      //console.log(location.href);   //현재주소 출력
+      location.href = './mobile/';    // 주소 변경(이동)
+    }   
+    
+
+    //2. window.devicePixelRatio
+    // if(window.devicePixelRatio > 1){
+    //   //console.log(location.href);   //현재주소 출력
+    //   location.href = './mobile/';    // 주소 변경(이동)
+    // }   
+
+
+  </script>
+
+</body>
+</html>

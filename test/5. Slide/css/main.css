@@ -1,0 +1,18 @@
+.slideshow{
+  overflow: hidden;
+  position: relative;
+  min-width: 960px; 
+  height: 465px;
+}
+
+.slideshow img{  
+  display: none;
+  position: absolute;/*이미지 4개 겹쳐놓음 정렬*/
+  left:50%;  /*가로가운데 정렬*/
+  margin-left: -800px;
+}
+
+/*JavScript*/
+.no-js .slideshow img:first-child{
+  display: inline;
+}

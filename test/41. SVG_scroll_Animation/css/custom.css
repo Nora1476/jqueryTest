@@ -1,0 +1,132 @@
+h1, h2, h3, p {
+	font-family:'Source Sans Pro';
+	font-weight: 300;
+}
+.clearfix { clear:both; }
+p {
+	font-size:1.2em;
+}
+
+h1, h2, h3 {
+	font-size:3em;
+}
+
+#blue-container {
+	background:#000 url(../images/bg.png) repeat-x;
+	padding: 120px 0;
+}
+
+#gray-container {
+	background:#fff url(../images/bg2.png);
+	padding: 120px 0;
+	margin-top:310px;
+}
+
+
+.alc {
+	text-align:center;
+}
+
+h1 {
+	color:#fff;
+}
+
+
+
+.notepads{
+	position:relative;
+	margin-top: 40px;
+	height: 252px;;
+}
+
+.notepads img,
+.notepads svg{
+	position: absolute;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.notepads #bigpad{
+	left:0;
+	top:0;
+}
+
+.notepads #smallpad{
+	right: 50px;
+	bottom: -5px;
+
+}
+
+.notepads.animate #bigpad{
+	left:70;
+	opacity: 1;
+}
+.notepads.animate #smallpad{
+	right: 150px;
+	opacity: 1;
+}
+
+
+/* bigpad lines CSS */
+.st0 {
+	fill: #E6E7E8;
+}
+
+.st1 {
+	fill: #231F20;
+}
+
+.st2 {
+	fill: none;
+	stroke: #FFFFFF;
+	stroke-width: 4;
+	stroke-miterlimit: 10;
+}
+
+.st3 {
+	fill: none;
+	stroke: #BCBEC0;
+	stroke-width: 4;
+	stroke-miterlimit: 10;
+}
+
+.st4 {
+	fill: #231F20;
+	stroke: #000000;
+	stroke-width: 9;
+	stroke-miterlimit: 10;
+}
+
+.st4 {
+	stroke-dasharray: 96;
+	stroke-dashoffset: 96;
+}
+
+/* jquery .add()를 통해 애니메이션을 함께 줄때 사용
+ .st4.animate{
+	animation: dash 0.4s linear forwards;
+} 
+*/
+.notepads.animate .st4{
+	animation: dash 0.4s linear forwards;
+} 
+
+
+
+#line1 {	animation-delay: 0.1s;}
+#line2 {	animation-delay: 0.2s;}
+#line3 {	animation-delay: 0.3s;}
+#line4 {	animation-delay: 0.4s;}
+#line5 {	animation-delay: 0.5s;}
+
+@keyframes dash {
+	from {
+		stroke-dashoffset: 96;
+	}
+
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+

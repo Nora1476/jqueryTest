@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <h1>Test Caption, hover</h1>
+
+    <div class="container">
+      <div class="imgbox">
+        <img src="./class/jQuery_05_hover_img_caption_BASE/img/01_img.jpg" alt="img1">
+        <div class="caption">
+          <span>caption</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script>
+        $(function(){
+
+          var $img = $('.imgbox');
+          var $du = 300;
+          $img.find('img').mouseover(function(){
+            $('.caption').stop().animate({opacity:1, bottom: '5px'}, $du );
+          }).mouseout(function(){
+            $('.caption').stop().animate({opacity:0, bottom: '-50px'}, $du );
+          });
+        });
+    </script>
+</body>
+
+    <style>
+
+        body{
+            background-color: blanchedalmond;
+        }
+        h1{
+          text-align: center;
+        }
+        .container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .imgbox{
+          position:relative;
+        }
+
+        .container .caption{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width:100%;
+          height: 50px;
+          position:absolute;
+          bottom:-50px;
+          background-color: rgba(0,0,0,0.3) ;   
+          font-weight: 600;
+          font-size:20px;  
+          opacity:0;     
+        }
+    </style>
+</html>

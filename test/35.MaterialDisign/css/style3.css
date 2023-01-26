@@ -1,0 +1,15 @@
+/*
+슬라이드용 이미지 경로 
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-08.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-09.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-10.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-11.jpg
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/409269/food-drink-12.jpg
+
+*/
+.controls {text-align: center;}
+.carousel {margin:0 auto;}
+.carousel-item img{width:100%; }
+.indicators{
+  background: #333;
+}

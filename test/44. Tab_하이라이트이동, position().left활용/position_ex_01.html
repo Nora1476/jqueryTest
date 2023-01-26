@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  *{margin:auto; padding:0;}
+  div { margin:50px; padding: 15px; position:relative;}
+  div p { border:1px solid #000;}
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  
+<div>
+  <p>Hello</p>
+</div>
+<p></p>
+
+<script>
+var p = $("p:first");
+var position = p.position();
+$("p:last").text( "left: " + position.left + ", top: " + position.top );
+</script>
+
+</body>
+</html>

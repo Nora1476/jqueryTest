@@ -1,0 +1,16 @@
+.demo-container{
+  width:500px;
+  height: 333px;
+  background: url(../images/image.jpg) no-repeat 0 0 / 100% 100%;
+  text-indent: -9999em;
+}
+
+/* @media screen and (min-width:480px){ }
+  스마트폰에서 웹페이지를 해석해서 보여주는 브라우저 엔진의 이름인 -webkit- 써야함 */
+@media screen and (-webkit-min-device-pixel-ratio:2){
+  .demo-container{
+    background-image: url(../images/image@2x.jpg);  
+    /* background 만쓰면 no-repeat 위에서 설정한 속성을 사용하지 않게됨
+       background의 이미지 url만 바꾸려면 background-image 풀로 써줘야함 */
+  }
+}
