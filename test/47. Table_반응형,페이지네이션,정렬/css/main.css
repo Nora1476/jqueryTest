@@ -1,0 +1,25 @@
+/* Demo styles. */
+td, th {
+	text-align: left;
+	padding: .5rem 1rem;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #ccc;
+}
+
+.wraper{
+  overflow: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.wraper table {
+  width: 100%;
+}
+/* 스크린 크기에 맞춰 768px이하에서 last-child없앰 */
+@media screen and (max-width:768px) {   
+ th:last-child, td:last-child{
+  display: none;
+ } 
+}

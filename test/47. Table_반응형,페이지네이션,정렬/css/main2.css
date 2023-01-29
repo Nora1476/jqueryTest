@@ -1,0 +1,44 @@
+
+/* Demo styles. */
+td, th {
+	text-align: left;
+	padding: .5rem 1rem;
+}
+
+tbody tr:nth-child(odd) {   /* 홀수번쨰 tr속성 변경 */
+	background-color: #ccc;
+}
+
+@media screen and (max-width:768px) {
+  th:last-child, td:last-child{
+    display: none;
+  }
+}
+
+@media screen and (max-width:480px) {
+  th:nth-child(2), td:nth-child(2){
+    display: none;
+  }
+  thead{ display: none; }
+}
+
+@media screen and (max-width:400px) {
+  table{width: 100%;}
+  th, td{ display: block !important;} /*한 줄 다 차지하도록하고 우선순위를 주어 앞에 display:none속성도 살림*/
+  
+  /* display:flex속성 우선으로 주어 각자태그를 인식하게하고 justify-content속성으로 재정렬*/
+  /* td{ border-bottom: 1px solid #eee; display:flex !important; justify-content: space-between;}   */
+  
+  /* display:grid 속성 사용*/
+  td{ border-bottom: 1px solid #eee; 
+      display:grid !important; 
+      grid-template-columns: 1fr 2fr;}  
+
+  td:before{ font-weight:bold; }
+  td:nth-of-type(1):before{content:'Name'} /* td의 첫번쨰 타입 앞에 다가 공간을 만들어서 Name을 집어넣음 */
+  td:nth-of-type(2):before{content:'Location'} 
+  td:nth-of-type(3):before{content:'Speciality'} 
+  td:nth-of-type(4):before{content:'Availability'} 
+  td:nth-of-type(5):before{content:'Eamil'} 
+}
+
